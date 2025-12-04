@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Sofía Viera " </title>
+  <link rel="stylesheet" href="stylePortfolio.css">
+</head>
+<body>
+  <header>
+    <h1>Sofía Viera</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio" class="seccion">
+    <h2>Bienvenido a mi Portfolio</h2>
+    <p>Estudiante de Licenciatura en Diseño y Desarrollo de Videojuegos - UNPAZ</p>
+  </section>
+
+  <section id="sobre-mi" class="seccion">
+    <div class="contenedor">
+      <img src="img/photoperfilsv.png" alt="Foto de Viera Sofía" class="foto-perfil">
+      <div class="texto">
+        <h2>Sobre mí</h2>
+        <p>Soy Sofía Viera, estudiante de la carrera de la licenciatura en diseño y desarrollo de videojuegos en la UNPAZ.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos" class="seccion">
+    <h2>Proyectos</h2>
+    <div class="proyectos-grid">
+      <a href="https://scratch.mit.edu/projects/713703622/" target="_blank" class="proyecto">
+  <img src="img/Captura Scratch.png" alt="Proyecto 1">
+  <h3>Viajando por el espacio.</h3>
+  <p>Viajando por el espacio es un juego de plataformas hecho en scratch para aprender las bases de la programacion por bloques.</p>
+</a>
+
+      <a href="https://drive.google.com/file/d/11NXpb-Aa4mVFJ_R-3laWUQBdPcqDs92G/view?usp=sharing" target="_blank" class="proyecto">
+  <img src="img/Ygdrassil.png" alt="Proyecto 2">
+  <h3>Cronicas del Ygdrassil.</h3>
+  <p>Cronicas del Ygdrassil, un juego de fantasia oscura medieval, realizado en RPGMaker, un proyecto para prender a usar este motor.</p>
+</a>
+
+      <a href="https://www.youtube.com/watch?v=fuNa47QEJ_w" target="_blank" class="proyecto">
+  <img src="img/Piso Labubu.png" alt="Proyecto 3">
+  <h3>El piso es laburo.</h3>
+  <p>Un proyecto sobre un prototipo hecho en Unity retomando la teoria aprendida en el cuatrimestre.</p>
+      </a>
+  </section>
+
+  <section id="video-demo" class="seccion">
+  <h2>Viajando por el espacio.</h2>
+  <p>Un gameplay de la jugabilidad de un proyecto en Scratch, Viajando por el espacio.</p>
+
+
+  <div class="video-container">
+    <video controls>
+      <source src="vid/Video muestra espacio.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+    </video>
+  </div>
+</section>
+
+
+<!-- Sección de video local -->
+<section id="video-local" class="seccion">
+  <h2>Gameplay RPGmaker, prototipo</h2>
+  <p>Este es un video en formato MP4 donde se puede ver la versión del proyecto que se encuentra subida a YouTube.</p>
+
+   <div class="video-container">
+    <video controls>
+      <source src="vid/Prototipo y practica de RPG Maker.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+    </video>
+  </div>
+</section>
+
+
+</section>
+
+
+  <section id="contacto" class="seccion">
+    <h2>Contacto</h2>
+    <p>Podés comunicarte conmigo para colaboraciones o consultas:</p>
+    <a href="sofiviera2004@gmail.com" class="btn-contacto">Enviar correo</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Viera Sofía - UNPAZ</p>
+  </footer>
+
+  <!-- Script para animaciones al hacer scroll -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const secciones = document.querySelectorAll(".seccion");
+
+    const mostrarSeccion = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(mostrarSeccion, {
+      threshold: 0.15
+    });
+
+    secciones.forEach(sec => observer.observe(sec));
+  });
+  </script>
+</body>
+</html>
